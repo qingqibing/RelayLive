@@ -1,5 +1,5 @@
 #pragma once
-#include "liveObj.h"
+#include "basicObj.h"
 #include "NetStreamMaker.h"
 
 /**
@@ -117,7 +117,7 @@ NalType inline h264_naltype(char* buff) {
 class CH264
 {
 public:
-    CH264(CLiveObj* pObj);
+    CH264(CBasicObj* pObj);
     ~CH264();
 
     /**
@@ -178,7 +178,7 @@ private:
     CNetStreamMaker    *m_pFullBuff;       // 缓存h264数据 7 8 5 1 1 1 1 ... 1
     bool               m_bFirstKey;        // 已经处理第一个关键帧
     bool               m_bDecode;          // 是否已经解析sps
-    CLiveObj*          m_pObj;
+    CBasicObj*          m_pObj;
 
     /** sps中的数据 */
     int32_t     m_nWidth;

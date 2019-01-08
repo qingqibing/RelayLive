@@ -5,7 +5,7 @@
 
 const uint8_t nTsContentLength = TS_PACKET_SIZE - TS_PACKET_HEADER;
 
-CTS::CTS(CLiveObj* pObj)
+CTS::CTS(CBasicObj* pObj)
     : m_pObj(pObj)
     , m_pTsBuff(nullptr)
     , m_nTsBuffLen(0)

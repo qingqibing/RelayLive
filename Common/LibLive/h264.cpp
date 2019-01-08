@@ -1,7 +1,7 @@
 #include "stdafx.h"
 #include "h264.h"
 
-CH264::CH264(CLiveObj* pObj)
+CH264::CH264(CBasicObj* pObj)
     : m_pObj(pObj)
     , m_pNaluBuff(nullptr)
     , m_nBuffLen(0)

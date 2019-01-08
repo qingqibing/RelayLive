@@ -1,4 +1,5 @@
 #include "stdafx.h"
+#include "HttpServer.h"
 #include "HttpLiveServer.h"
 #include "LiveWorker.h"
 //ÆäËûÄ£¿é
@@ -8,6 +9,7 @@
 
 namespace HttpWsServer
 {
+    extern make_rtsp_addr get_rtsp_addr;
 	extern uv_loop_t *g_uv_loop;
 
     static map<string,CLiveWorker*>  m_workerMap;
@@ -171,7 +173,9 @@ namespace HttpWsServer
         m_pMP4Ring  = lws_ring_create(sizeof(LIVE_BUFF), 100, destroy_ring_node);
 
 		liblive_option opt = {m_nPort, m_nRtpCatchPacketNum, m_nRtpStreamType};
-        m_pLive = IlibLive::CreateObj(opt);
+        char rtsp_addr[100]={0};
+        get_rtsp_addr((char*)strCode.c_str(), rtsp_addr);
+        m_pLive = IlibLive::CreateRtspObj(rtsp_addr);
         m_pLive->SetCallback(this);
         m_pLive->StartListen();
     }

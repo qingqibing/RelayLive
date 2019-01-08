@@ -103,7 +103,7 @@ void CFlvStreamMaker::append_amf_double(double d)
     append_double(d);
 }
 
-CFlv::CFlv(CLiveObj* pObj)
+CFlv::CFlv(CBasicObj* pObj)
     : m_pObj(pObj)
     , m_pSPS(nullptr)
     , m_pPPS(nullptr)

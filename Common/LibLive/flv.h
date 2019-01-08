@@ -1,5 +1,5 @@
 #pragma once
-#include "liveObj.h"
+#include "basicObj.h"
 #include "NetStreamMaker.h"
 
 enum flv_tag_type
@@ -22,7 +22,7 @@ public:
 class CFlv
 {
 public:
-    CFlv(CLiveObj* pObj);
+    CFlv(CBasicObj* pObj);
     ~CFlv(void);
 
     int InputBuffer(NalType eType, char* pBuf, uint32_t nLen);
@@ -51,7 +51,7 @@ private:
     uint32_t           m_timestamp;       // 时间戳
     uint32_t           m_tick_gap;        // 两帧间的间隔
 
-    CLiveObj*          m_pObj;
+    CBasicObj*          m_pObj;
 
     // SPS解析出的信息
     uint32_t           m_nWidth;          // 视频宽

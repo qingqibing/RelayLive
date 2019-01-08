@@ -39,6 +39,12 @@
     <ClCompile Include="liveObj.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
+    <ClCompile Include="rtspObj.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="basicObj.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="stdafx.h">
@@ -72,6 +78,12 @@
       <Filter>头文件</Filter>
     </ClInclude>
     <ClInclude Include="liveObj.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="rtspObj.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="basicObj.h">
       <Filter>头文件</Filter>
     </ClInclude>
   </ItemGroup>

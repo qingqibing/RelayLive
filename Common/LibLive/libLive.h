@@ -76,6 +76,8 @@ struct LIBLIVE_API IlibLive
      */
     static IlibLive* CreateObj(liblive_option opt);
 
+    static IlibLive* CreateRtspObj(string rtsp);
+
     /** 
      * Æô¶¯UDP¶Ë¿Ú¼àÌý 
      */
