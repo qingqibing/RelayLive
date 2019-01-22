@@ -11,15 +11,24 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="..\..\Projects\rtsp_live.cpp" />
-  </ItemGroup>
-  <ItemGroup>
     <ProjectReference Include="..\..\Common\Util\Util.vcxproj">
       <Project>{642077f6-2ca8-4e04-9b0d-9cfa1e5efa49}</Project>
     </ProjectReference>
-    <ProjectReference Include="..\..\Modules\HttpServer\HttpServer.vcxproj">
-      <Project>{d99bdf45-2f42-4d81-8795-5357c4a1914f}</Project>
-    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\..\Projects\rtsp2ws\DeviceInfo.cpp" />
+    <ClCompile Include="..\..\Projects\rtsp2ws\HttpLiveServer.cpp" />
+    <ClCompile Include="..\..\Projects\rtsp2ws\HttpServer.cpp" />
+    <ClCompile Include="..\..\Projects\rtsp2ws\HttpWebServer.cpp" />
+    <ClCompile Include="..\..\Projects\rtsp2ws\LiveWorker.cpp" />
+    <ClCompile Include="..\..\Projects\rtsp2ws\rtsp2ws.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\Projects\rtsp2ws\DeviceInfo.h" />
+    <ClInclude Include="..\..\Projects\rtsp2ws\HttpLiveServer.h" />
+    <ClInclude Include="..\..\Projects\rtsp2ws\HttpServer.h" />
+    <ClInclude Include="..\..\Projects\rtsp2ws\HttpWebServer.h" />
+    <ClInclude Include="..\..\Projects\rtsp2ws\LiveWorker.h" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <ProjectGuid>{D61547AA-B0C7-45A7-9E34-2AEEAC9B973B}</ProjectGuid>
@@ -65,16 +74,16 @@
       <PrecompiledHeader>NotUsing</PrecompiledHeader>
       <WarningLevel>Level3</WarningLevel>
       <Optimization>Disabled</Optimization>
-      <PreprocessorDefinitions>WIN32;_CONSOLE;_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>WIN32;_CONSOLE;__STDC_FORMAT_MACROS;_CRT_SECURE_NO_WARNINGS;_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <SDLCheck>true</SDLCheck>
-      <AdditionalIncludeDirectories>$(SolutionDir)../thirdParty/libUV/include;$(SolutionDir)../thirdParty/ocilib/include;$(SolutionDir)../common/libOci/include;$(SolutionDir)../common/uvIpc;$(SolutionDir)../common/utilc;$(SolutionDir)../common/Util/include;$(SolutionDir)../Modules/RtspServer;$(SolutionDir)../Modules/HttpServer;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(SolutionDir)../thirdParty/libUV/include;$(SolutionDir)../thirdParty/LibWebSockets;$(SolutionDir)../thirdParty/ocilib/include;$(SolutionDir)../thirdParty/ffmpeg/include;$(SolutionDir)../common/libOci/include;$(SolutionDir)../common/utilc;$(SolutionDir)../common/Util/include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <AdditionalDependencies>ws2_32.lib;userenv.lib;psapi.lib;iphlpapi.lib;libuv.lib;Dnsapi.lib;delayimp.lib;Qwave.lib;ociliba.lib;liboci.lib;util.lib;utilc.lib;uvIpc.lib;websockets_static.lib;HttpServer.lib;RtspServer.lib;%(AdditionalDependencies)</AdditionalDependencies>
-      <AdditionalLibraryDirectories>$(SolutionDir)Lib/$(Platform)/$(Configuration);$(SolutionDir)../thirdParty/ocilib/lib/$(Platform);%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories>$(SolutionDir)Lib/$(Platform)/$(Configuration);$(SolutionDir)../thirdParty/ocilib/lib/$(Platform);$(SolutionDir)../thirdParty/ffmpeg/lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
@@ -84,9 +93,9 @@
       <Optimization>MaxSpeed</Optimization>
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>true</IntrinsicFunctions>
-      <PreprocessorDefinitions>WIN32;_CONSOLE;NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>WIN32;_CONSOLE;__STDC_FORMAT_MACROS;_CRT_SECURE_NO_WARNINGS;NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <SDLCheck>true</SDLCheck>
-      <AdditionalIncludeDirectories>$(SolutionDir)../thirdParty/libUV/include;$(SolutionDir)../thirdParty/ocilib/include;$(SolutionDir)../common/libOci/include;$(SolutionDir)../common/uvIpc;$(SolutionDir)../common/utilc;$(SolutionDir)../common/Util/include;$(SolutionDir)../Modules/RtspServer;$(SolutionDir)../Modules/HttpServer;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(SolutionDir)../thirdParty/libUV/include;$(SolutionDir)../thirdParty/LibWebSockets;$(SolutionDir)../thirdParty/ocilib/include;$(SolutionDir)../thirdParty/ffmpeg/include;$(SolutionDir)../common/libOci/include;$(SolutionDir)../common/utilc;$(SolutionDir)../common/Util/include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
     </ClCompile>
     <Link>
@@ -94,7 +103,7 @@
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
-      <AdditionalLibraryDirectories>$(SolutionDir)Lib/$(Platform)/$(Configuration);$(SolutionDir)../thirdParty/ocilib/lib/$(Platform);%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories>$(SolutionDir)Lib/$(Platform)/$(Configuration);$(SolutionDir)../thirdParty/ocilib/lib/$(Platform);$(SolutionDir)../thirdParty/ffmpeg/lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <AdditionalDependencies>ws2_32.lib;userenv.lib;psapi.lib;iphlpapi.lib;libuv.lib;Dnsapi.lib;delayimp.lib;Qwave.lib;ociliba.lib;liboci.lib;util.lib;utilc.lib;uvIpc.lib;websockets_static.lib;HttpServer.lib;RtspServer.lib;%(AdditionalDependencies)</AdditionalDependencies>
       <IgnoreSpecificDefaultLibraries>
       </IgnoreSpecificDefaultLibraries>
