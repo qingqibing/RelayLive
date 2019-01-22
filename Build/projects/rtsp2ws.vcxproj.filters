@@ -6,39 +6,39 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="..\..\Projects\rtsp2ws\rtsp2ws.cpp">
+    <ClCompile Include="..\..\Projects\rtsp2ws.cpp">
       <Filter>src</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\Projects\rtsp2ws\HttpServer.cpp">
+    <ClCompile Include="..\..\Projects\HttpServer.cpp">
       <Filter>src</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\Projects\rtsp2ws\LiveWorker.cpp">
+    <ClCompile Include="..\..\Projects\LiveWorker.cpp">
       <Filter>src</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\Projects\rtsp2ws\HttpLiveServer.cpp">
+    <ClCompile Include="..\..\Projects\HttpLiveServer.cpp">
       <Filter>src</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\Projects\rtsp2ws\DeviceInfo.cpp">
+    <ClCompile Include="..\..\Projects\DeviceInfo.cpp">
       <Filter>src</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\Projects\rtsp2ws\HttpWebServer.cpp">
+    <ClCompile Include="..\..\Projects\HttpWebServer.cpp">
       <Filter>src</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="..\..\Projects\rtsp2ws\HttpLiveServer.h">
+    <ClInclude Include="..\..\Projects\HttpLiveServer.h">
       <Filter>src</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\Projects\rtsp2ws\HttpServer.h">
+    <ClInclude Include="..\..\Projects\HttpServer.h">
       <Filter>src</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\Projects\rtsp2ws\LiveWorker.h">
+    <ClInclude Include="..\..\Projects\LiveWorker.h">
       <Filter>src</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\Projects\rtsp2ws\DeviceInfo.h">
+    <ClInclude Include="..\..\Projects\DeviceInfo.h">
       <Filter>src</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\Projects\rtsp2ws\HttpWebServer.h">
+    <ClInclude Include="..\..\Projects\HttpWebServer.h">
       <Filter>src</Filter>
     </ClInclude>
   </ItemGroup>
