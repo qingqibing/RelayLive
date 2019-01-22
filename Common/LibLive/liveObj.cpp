@@ -68,9 +68,6 @@ CLiveObj::CLiveObj(liblive_option opt)
     , m_pPsParser(nullptr)
     , m_pPesParser(nullptr)
     , m_pEsParser(nullptr)
-    , m_pTs(nullptr)
-    , m_pFlv(nullptr)
-    , m_pCallBack(nullptr)
     , m_pts(0)
     , m_dts(0)
     , m_nalu_type(unknow)
@@ -79,10 +76,6 @@ CLiveObj::CLiveObj(liblive_option opt)
     m_pPsParser      = new CPs(this);
     m_pPesParser     = new CPes(this);
     m_pEsParser      = new CES(this);
-    m_pH264          = new CH264(this);
-    m_pTs            = new CTS(this);
-    m_pFlv           = new CFlv(this);
-    m_pMp4           = new CMP4(this);
 
 	CRtp* rtpAnalyzer = (CRtp*)m_pRtpParser;
 	rtpAnalyzer->SetCatchFrameNum(opt.nPacketNum);
@@ -94,16 +87,10 @@ CLiveObj::~CLiveObj(void)
     while (m_uvLoop)
         Sleep(1000);
 
-    m_pCallBack = nullptr;
     SAFE_DELETE(m_pRtpParser);
     SAFE_DELETE(m_pPsParser);
     SAFE_DELETE(m_pPesParser);
     SAFE_DELETE(m_pEsParser);
-    SAFE_DELETE(m_pH264);
-    SAFE_DELETE(m_pTs);
-    SAFE_DELETE(m_pFlv);
-    SAFE_DELETE(m_pMp4);
-    //Sleep(2000);
 }
 
 void CLiveObj::StartListen()
@@ -258,45 +245,6 @@ void CLiveObj::ESParseCb(char* pBuff, long nLen/*, uint8_t nNalType*/)
         CMP4* mp4 = (CMP4*)m_pMp4;
         mp4->InputBuffer(m_nalu_type, pData, nDataLen);
     }
-}
-
-void CLiveObj::H264SpsCb(uint32_t nWidth, uint32_t nHeight, double fFps)
-{
-    if(nullptr != m_pFlv)
-    {
-        CFlv* flv = (CFlv*)m_pFlv;
-        flv->SetSps(nWidth,nHeight,fFps);
-    }
-    if (nullptr != m_pMp4)
-    {
-        CMP4* mp4 = (CMP4*)m_pMp4;
-        mp4->SetSps(nWidth,nHeight,fFps);
-    }
-}
-
-void CLiveObj::FlvCb(FLV_FRAG_TYPE eType, char* pBuff, int nBuffSize)
-{
-    CHECK_POINT_VOID(m_pCallBack);
-    m_pCallBack->push_flv_frame(eType, pBuff, nBuffSize);
-}
-
-void CLiveObj::Mp4Cb(MP4_FRAG_TYPE eType, char* pBuff, int nBuffSize)
-{
-    CHECK_POINT_VOID(m_pCallBack);
-    m_pCallBack->push_mp4_stream(eType, pBuff, nBuffSize);
-}
-
-void CLiveObj::TsCb(char* pBuff, int nBuffSize)
-{
-    CHECK_POINT_VOID(m_pCallBack);
-    m_pCallBack->push_ts_stream(pBuff, nBuffSize);
-}
-
-void CLiveObj::H264Cb(char* pBuff, int nBuffSize)
-{
-    CHECK_POINT_VOID(m_pCallBack);
-	if (m_pCallBack->m_bH264)
-		m_pCallBack->push_h264_stream(pBuff, nBuffSize);
 }
 
 void CLiveObj::AsyncClose()

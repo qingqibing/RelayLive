@@ -11,6 +11,7 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="basicObj.cpp" />
     <ClCompile Include="es.cpp" />
     <ClCompile Include="flv.cpp" />
     <ClCompile Include="h264.cpp" />
@@ -19,6 +20,7 @@
     <ClCompile Include="ps.cpp" />
     <ClCompile Include="rtp.cpp" />
     <ClCompile Include="liveObj.cpp" />
+    <ClCompile Include="rtspObj.cpp" />
     <ClCompile Include="stdafx.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Create</PrecompiledHeader>
@@ -26,6 +28,7 @@
     <ClCompile Include="ts.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="basicObj.h" />
     <ClInclude Include="es.h" />
     <ClInclude Include="flv.h" />
     <ClInclude Include="h264.h" />
@@ -35,6 +38,7 @@
     <ClInclude Include="rtp.h" />
     <ClInclude Include="liveObj.h" />
     <ClInclude Include="libLive.h" />
+    <ClInclude Include="rtspObj.h" />
     <ClInclude Include="ts.h" />
     <ClInclude Include="stdafx.h" />
   </ItemGroup>

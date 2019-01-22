@@ -212,7 +212,7 @@ struct mp4_mdat_box {
 #pragma pack()
 
 
-CMP4::CMP4(CLiveObj* pObj)
+CMP4::CMP4(CBasicObj* pObj)
     : m_pObj(pObj)
     , m_nSampleNum(0)
     , m_timestamp(0)

@@ -1,12 +1,14 @@
 #include "stdafx.h"
 #include "libwebsockets.h"
 #include "pugixml.hpp"
+#include "HttpServer.h"
 #include "HttpWebServer.h"
 #include "HttpLiveServer.h"
 #include "LiveWorker.h"
 
 namespace HttpWsServer
 {
+    make_rtsp_addr get_rtsp_addr = NULL;
 	uv_loop_t *g_uv_loop = NULL;
     static struct lws_context_creation_info info;  //libwebsockets≈‰÷√–≈œ¢
     static struct lws_context *context;            //libwebsocketsæ‰±˙
@@ -144,5 +146,9 @@ namespace HttpWsServer
         // œ˙ªŸlibwebsockets
         lws_context_destroy(context);
         return 0;
+    }
+
+    void set_rtsp_addr_func(make_rtsp_addr func) {
+        get_rtsp_addr = func;
     }
 };
