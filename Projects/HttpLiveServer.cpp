@@ -12,12 +12,11 @@ namespace HttpWsServer
             return g_strError_play_faild;
         }
 
-        CLiveWorker* pWorker = CreatLiveWorker(devCode);
+        CLiveWorker* pWorker = CreatLiveWorker(devCode,pss);
         if(!pWorker) {
             Log::error("CreatFlvBuffer failed%s", devCode.c_str());
             return g_strError_play_faild;
         }
-        pWorker->AddConnect(pss);
 
         pss->m_pWorker = pWorker;
         return "";
@@ -148,7 +147,7 @@ namespace HttpWsServer
             {
                 if (!pss || !pss->m_pWorker)
                     break;
-                pss->m_pWorker->DelConnect(pss);
+                pss->m_pWorker->Clear2Stop();
             }
         default:
             break;
@@ -252,7 +251,7 @@ namespace HttpWsServer
                 if (!pss || !pss->m_pWorker)
                     break;
                 Log::debug("live ws protocol cloes %s", pss->path);
-                pss->m_pWorker->DelConnect(pss);
+                pss->m_pWorker->Clear2Stop();
             }
         default:
             break;

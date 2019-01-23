@@ -7,8 +7,6 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Common", "Common", "{E3618F
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Projects", "Projects", "{49D91353-B067-42D9-A46A-FA715F0A75B2}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "exOsip", "..\ThirdParty\ExOsip\build\exOsip.vcxproj", "{EE73524F-2100-4479-A0C9-30B4072EBE1B}"
-EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "libuv", "..\ThirdParty\LibUV\libuv.vcxproj", "{6197738F-BB03-47B6-8685-677BC2C346BC}"
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "websockets_static", "..\ThirdParty\libWebSockets\websockets_static.vcxproj", "{61AD327B-12DB-3EDF-A2F2-C0B7A4712A04}"
@@ -27,10 +25,6 @@ Global
 		Release|Win32 = Release|Win32
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{EE73524F-2100-4479-A0C9-30B4072EBE1B}.Debug|Win32.ActiveCfg = Debug|Win32
-		{EE73524F-2100-4479-A0C9-30B4072EBE1B}.Debug|Win32.Build.0 = Debug|Win32
-		{EE73524F-2100-4479-A0C9-30B4072EBE1B}.Release|Win32.ActiveCfg = Release|Win32
-		{EE73524F-2100-4479-A0C9-30B4072EBE1B}.Release|Win32.Build.0 = Release|Win32
 		{6197738F-BB03-47B6-8685-677BC2C346BC}.Debug|Win32.ActiveCfg = Debug|Win32
 		{6197738F-BB03-47B6-8685-677BC2C346BC}.Debug|Win32.Build.0 = Debug|Win32
 		{6197738F-BB03-47B6-8685-677BC2C346BC}.Release|Win32.ActiveCfg = Release|Win32
@@ -60,7 +54,6 @@ Global
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
-		{EE73524F-2100-4479-A0C9-30B4072EBE1B} = {16DBA568-1950-4EC7-B013-48D84DFBCC3B}
 		{6197738F-BB03-47B6-8685-677BC2C346BC} = {16DBA568-1950-4EC7-B013-48D84DFBCC3B}
 		{61AD327B-12DB-3EDF-A2F2-C0B7A4712A04} = {16DBA568-1950-4EC7-B013-48D84DFBCC3B}
 		{642077F6-2CA8-4E04-9B0D-9CFA1E5EFA49} = {E3618F7A-E947-4367-B08B-FF30C2E17CFF}

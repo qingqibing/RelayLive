@@ -82,7 +82,7 @@
     <Link>
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <AdditionalDependencies>ws2_32.lib;userenv.lib;psapi.lib;iphlpapi.lib;libuv.lib;Dnsapi.lib;delayimp.lib;Qwave.lib;ociliba.lib;liboci.lib;util.lib;utilc.lib;uvIpc.lib;websockets_static.lib;HttpServer.lib;RtspServer.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>ws2_32.lib;userenv.lib;psapi.lib;iphlpapi.lib;libuv.lib;Dnsapi.lib;delayimp.lib;Qwave.lib;ociliba.lib;liboci.lib;util.lib;utilc.lib;websockets_static.lib;%(AdditionalDependencies)</AdditionalDependencies>
       <AdditionalLibraryDirectories>$(SolutionDir)Lib/$(Platform)/$(Configuration);$(SolutionDir)../thirdParty/ocilib/lib/$(Platform);$(SolutionDir)../thirdParty/ffmpeg/lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
     </Link>
   </ItemDefinitionGroup>
@@ -104,7 +104,7 @@
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
       <AdditionalLibraryDirectories>$(SolutionDir)Lib/$(Platform)/$(Configuration);$(SolutionDir)../thirdParty/ocilib/lib/$(Platform);$(SolutionDir)../thirdParty/ffmpeg/lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
-      <AdditionalDependencies>ws2_32.lib;userenv.lib;psapi.lib;iphlpapi.lib;libuv.lib;Dnsapi.lib;delayimp.lib;Qwave.lib;ociliba.lib;liboci.lib;util.lib;utilc.lib;uvIpc.lib;websockets_static.lib;HttpServer.lib;RtspServer.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>ws2_32.lib;userenv.lib;psapi.lib;iphlpapi.lib;libuv.lib;Dnsapi.lib;delayimp.lib;Qwave.lib;ociliba.lib;liboci.lib;util.lib;utilc.lib;websockets_static.lib;%(AdditionalDependencies)</AdditionalDependencies>
       <IgnoreSpecificDefaultLibraries>
       </IgnoreSpecificDefaultLibraries>
     </Link>

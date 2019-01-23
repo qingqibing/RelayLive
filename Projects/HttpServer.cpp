@@ -126,6 +126,8 @@ namespace HttpWsServer
             return -1;
         }
 
+        //InitFFmpeg();
+
         return 0;
     }
 
