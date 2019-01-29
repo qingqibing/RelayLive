@@ -278,7 +278,7 @@ end:
         avformat_free_context(ofc);
 
         /** ·µ»ØÂë */
-        if (ret < 0 && ret != AVERROR_EOF) {
+        if (ret < 0 /*&& ret != AVERROR_EOF*/) {
             char tmp[AV_ERROR_MAX_STRING_SIZE]={0};
             av_make_error_string(tmp,AV_ERROR_MAX_STRING_SIZE,ret);
             Log::error("Error occurred: %s\n", tmp);
