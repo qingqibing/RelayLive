@@ -129,7 +129,7 @@ namespace HttpWsServer
                     break;
 
                 if (strlen(pss->strErrInfo) == 0) {
-                    SendLiveFlv(pss);;
+                    SendLiveFlv(pss);
                     return 0;
                 } else {
                     int len = strlen(pss->strErrInfo);
