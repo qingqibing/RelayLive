@@ -1,39 +1,13 @@
-[SipSever]
-Code = 36030000042000000003
-;设备编码
-IP = 192.168.1.235
-;服务IP
-Port = 5060
-;服务端口
-RegAuthor = false
-;注册是否需要鉴权
-
-[PlatFormInfo]
-Code = 
-;对方下级平台的编码
-IP = 
-;对方下级平台的IP
-Port =
-;对方下级平台的端口
-
 [DataBase]
 Path = C:\instantclient_11_2
+;oci目录
 Addr = 172.31.7.7/pxzhjt
+;数据库connectstr
 User = basic
+;数据库用户
 PassWord = 123
-
-
-[RtpClient]
-IP = 192.168.1.235
-;rtp服务IP
-BeginPort = 50000
-;rtp起始端口
-PortNum = 1000
-;rtp端口数量
-CatchPacketNum = 100
-;rtp包缓存数量
-Filter = 1
-;0-ps,1-h264
+;密码
+DeviceSql = 
 
 [HttpServer]
 IP = 0.0.0.0
@@ -42,9 +16,9 @@ Port = 80
 ;http端口
 wsPort = 8000
 ;websocket端口
-RootPath = D:\relayLive\web
+RootPath = ./web
 ;根目录
-TmpPath = C:\Tmp
+TmpPath = ./Tmp
 ;临时目录
 DefaultFile = index.html
 ;默认文件名称
