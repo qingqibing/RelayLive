@@ -6,7 +6,8 @@ namespace DeviceInfo
 {
     enum devType {
         DEV_DAHUA = 0,
-        DEV_HIK
+        DEV_HIK,
+		DEV_UNIVIEW
     };
 
     struct DEV_INFO
@@ -71,7 +72,7 @@ namespace DeviceInfo
         //查询设备信息
         const char *sql = "select t.FACILITY_ID,t.ACCESS_TYPE,t.IP_ADDRESS,"
             "t.PORT,t.USER_NAME,t.PASSWORD,t.CHANEL from VIDEO_INFO t"
-            " where t.IP_ADDRESS is not null and t.IS_USABLE = 1 and t.ACCESS_TYPE = 1"
+            " where t.IP_ADDRESS is not null and t.IS_USABLE = 1"
             " order by t.FACILITY_ID";
 
         OCI_ExecuteStmt(st, sql);
@@ -126,7 +127,11 @@ namespace DeviceInfo
             sprintf_s(rtsp, 100, "rtsp://%s:%s@%s:%d/h264/ch/%s/av_stream"
                 , dev.user_name.c_str(), dev.password.c_str()
                 , dev.ip.c_str(), dev.port, dev.stream==0?"main":"sub");
-        }
+		} else if(dev.dev_type == DEV_UNIVIEW) {
+			sprintf_s(rtsp, 100, "rtsp://%s:%s@%s:%d/video%d"
+                , dev.user_name.c_str(), dev.password.c_str()
+                , dev.ip.c_str(), dev.port, dev.stream+1);
+		}
         return rtsp;
     }
 }
